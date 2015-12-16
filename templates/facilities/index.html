@@ -1,0 +1,18 @@
+<ion-view view-title="Facilities" ng-init="loadCategories()">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="query" placeholder="Search for a category">
+      </label>
+    </div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in categories | filter: query" type="item-text-wrap" ng-click="showFacilities(category.title)">
+        <img ng-src="img/medical.png">
+        <h2>{{category.title}}</h2>
+        <p><strong>{{category.count}}</strong> facilities</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

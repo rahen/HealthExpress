@@ -1,0 +1,17 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Doctor Information</h1>
+        <button class="button" ng-click="modal.hide()">
+            <i class="icon ion-close-round"></i>
+        </button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card">
+          <div class="item item-text-wrap">
+              Name: {{doctor.name}}
+              <br/> Email: {{doctor.email}}
+              <br/> Visiting Hours: {{doctor.visitingHours}}
+          </div>
+      </div>
+    </ion-content>
+</ion-modal-view>

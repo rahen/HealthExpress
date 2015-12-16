@@ -1,0 +1,36 @@
+<ion-view view-title="Facility" ng-init="loadFacility()">
+  <ion-content>
+    <div class="item item-text-wrap">
+      <h2 class="title">
+        <i class="ion ion-medkit"></i>
+        {{facility.name}}
+      </h2>
+    </div>
+    <div id="map" ng-model="map" data-tap-disabled="true"></div>
+    <div class="list card">
+      <div class="item item-text-wrap">
+        <ul class="row" style="padding:0; margin:0">
+          <li class="col"><font color="#feba0">{{facility.star}}</font></li>
+          <li class="col" style="text-align:right"><p>{{facility.distance}}</p></li>
+        </ul>
+      </div>
+      <div class="item item-text-wrap">
+        {{facility.managed_by}} ({{facility.managed_by_subtype}})
+      </div>
+      <div class="item item-text-wrap">
+        Email: {{facility.contact_email}}<br/>
+        Phone: {{facility.contact_phone}}
+      </div>
+      <div class="item item-text-wrap">
+        House: {{facility.house}}, Road: {{facility.road}}<br/>
+        Area: {{facility.area}}<br/>
+        Postal Code: {{facility.postal_code}}<br/>
+        City corporation: {{facility.citycorporation}}, Ward: {{facility.ward}}
+      </div>
+      <div class="item item-text-wrap">
+        Respondent: {{facility.res_name}}, {{facility.res_designation}}<br/>
+        Phone: {{facility.res_phone}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="Doctors" ng-init="listDoctors()">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="listDoctors(true)">
+    </ion-refresher>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="query" placeholder="Search for a Doctor with name, email or visiting hours">
+      </label>
+    </div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="doctor in doctors | filter: query" type="item-text-wrap" ng-click="showModal('detail.html', doctor)">
+        <img src="img/doctor.png">
+        <h2>{{doctor.name}}</h2>
+        <p>Email: {{doctor.email}}</p>
+        <p>Visiting Hours: {{doctor.visitingHours}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

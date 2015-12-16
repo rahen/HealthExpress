@@ -1,0 +1,31 @@
+<ion-view view-title="{{title}}" ng-init="list()">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="query" placeholder="Search for a facility with name, respondent or area">
+      </label>
+    </div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right"
+                ng-repeat="facility in facilities | filter: query" type="item-text-wrap"
+                ng-click="showFacility(facility.$id, facility.type, facility.star, facility.distance)">
+        <img ng-src="img/facility.png">
+        <h2>
+          {{facility.name}}
+        </h2>
+        <p>{{facility.type}}</p>
+        <p>Area: {{facility.area}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ul class="row" style="padding:0; margin:0">
+          <li class="col"><font color="#feba0">{{facility.star}}</font></li>
+          <li class="col" style="text-align:right"><p>{{facility.distance}}</p></li>
+        </ul>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll
+      on-infinite="loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

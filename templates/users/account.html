@@ -1,0 +1,23 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-person-stalker"></i>
+        Friends
+        <span class="badge badge-assertive">3</span>
+      </a>
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-document"></i>
+        Reviews
+        <span class="badge badge-assertive">7</span>
+      </a>
+      <ion-toggle ng-model="settings.enableFriends">
+        <i class="ion ion-loop"></i>
+        Auto Sync
+      </ion-toggle>
+      <button class="button button-block button-assertive" ng-click="logout()">
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-view>
