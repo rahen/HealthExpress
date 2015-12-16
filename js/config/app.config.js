@@ -1,2 +1,2 @@
 angular.module('healthexpress')
-  .value('firebaseURL', 'https://health-express.firebaseIO.com');
+  .value('firebaseURL', '//health-express.firebaseIO.com');
